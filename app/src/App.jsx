@@ -6,6 +6,11 @@ import TransactionPage from "./pages/Transaction/Transaction";
 import Signup from "./pages/Auth/Signup/Signup";
 import Signin from "./pages/Auth/Signin/Signin";
 import RegisterEmailVerify from "./pages/Auth/RegisterEmailVerify/RegisterEmailVerify";
+import RegisterSuccess from "./pages/Auth/RegisterSuccess/RegisterSuccess";
+import ForgotPassword from "./pages/Auth/ForgotPassword/ForgotPassword";
+import ForgotPasswordSent from "./pages/Auth/ForgotPasswordSent/ForgotPasswordSent";
+import ResetPasswordSuccess from "./pages/Auth/ForgotPasswordSent/ForgotPasswordSent";
+import ResetPassword from "./pages/Auth/ResetPassword/ResetPassword";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +35,23 @@ const router = createBrowserRouter([
   {
     path: "/register-email-verify",
     element: <RegisterEmailVerify />,
+  },
+  {
+    path: "/register-email-success",
+    element: <RegisterSuccess />,
+  },
+  {
+    path: "/register-forgot-password",
+    element: <ForgotPassword />,
+  },
+  {
+    path: "/forgot-success",
+    element: <ForgotPasswordSent />,
+  },
+
+  {
+    path: "/reset-password",
+    element: <ResetPassword />,
   },
 ]);
 

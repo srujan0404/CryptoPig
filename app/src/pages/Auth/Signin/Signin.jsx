@@ -19,15 +19,10 @@ import { object, string, ref } from "yup";
 import Card from "../../../components/Card";
 
 const signinValidationSchema = object({
-  name: string().required("Name is required"),
-  surname: string().required("Surname is required"),
   email: string().email("Email is invalid").required("Email is required"),
   password: string()
     .min(6, "Password must be atleast 6 characters")
     .required("Password is required"),
-  repeatpassword: string()
-    .oneOf([ref("password"), null], "Password must match")
-    .required("Repeat password is required"),
 });
 
 const Signin = () => {
@@ -53,7 +48,7 @@ const Signin = () => {
           >
             {() => (
               <Form>
-                <Stack mt="10" spacing={6}>
+                <Stack mt="8" spacing={6}>
                   <Field name="email">
                     {({ field, meta }) => (
                       <FormControl isInvalid={!!(meta.error && meta.touched)}>
@@ -86,8 +81,8 @@ const Signin = () => {
                     <Checkbox>
                       <Text textStyle="p3">Remember Me</Text>
                     </Checkbox>
-                    <Link to="/forgot-password">
-                      <Text textStyle="p3" as="span" color="p.purple">
+                    <Link to="/register-forgot-password">
+                      <Text mt="4"  textStyle="p3" as="span" color="p.purple">
                         Forgot Password?
                       </Text>
                     </Link>
